@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jwf</title>
+	<script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#add").click(function(){
+				$.ajax({
+					type:'post',
+					url:'http://localhost:3000/add',
+					contentType: "application/json;charset=utf-8",
+		            data : JSON.stringify({'time':'2017-10-29','title':'测试1','content':'测试数据啦啦啦啦'}),
+			        dataType : "text",
+					success:function(data){
+						console.log(data);
+					},
+					error:function(){
+					 console.log('error');
+					}
+				});
+			});
+			$("#login").click(function(){
+				$.ajax({
+					type:'post',
+					url:'http://localhost:3000/login',
+					contentType: "application/json;charset=utf-8",
+		            data : JSON.stringify({'username':'jwf','password':'lj1314520'}),
+			        dataType : "text",
+					success:function(data){
+						console.log(data);
+					},
+					error:function(){
+					 console.log('error');
+					}
+				});
+			});
+			$("#delete").click(function(){
+				$.ajax({
+					type:'delete',
+					url:'http://localhost:3000/delete',
+					contentType: "application/json;charset=utf-8",
+		            data : JSON.stringify({'id':14}),
+			        dataType : "text",
+					success:function(data){
+						console.log(data);
+					},
+					error:function(){
+					 console.log('error');
+					}
+				});
+			});
+			$("#search").click(function(){
+				$.ajax({
+					type:'get',
+					url:'http:localhost:3000/note',
+					contentType: "application/json;charset=utf-8",
+					data : {'time':'2017-10-30','title':'测试1'},
+			        dataType : "JSON",
+					success:function(data){
+						console.log(data);
+					},
+					error:function(){
+					 console.log('error');
+					}
+				});
+			});
+			$("#zhuce").click(function(){
+				$.ajax({
+					type:'post',
+					url:'http://localhost:3000/zhuce',
+					contentType: "application/json;charset=utf-8",
+		            data : JSON.stringify({'username':'ceshi','password':'ceshi','quanxian':0}),
+			        dataType : "text",
+					success:function(data){
+						console.log(data);
+					},
+					error:function(){
+					 console.log('error');
+					}
+				});
+			});
+			$("#loginout").click(function(){
+				$.ajax({
+					type:'get',
+					url:'http:localhost:3000/loginout',
+					contentType: "application/json;charset=utf-8",
+					success:function(data){
+						console.log(data);
+					},
+					error:function(){
+					 console.log('error');
+					}
+				});
+			});
+			$("#update").click(function(){
+				$.ajax({
+					type:'put',
+					url:'http://localhost:3000/update',
+					contentType: "application/json;charset=utf-8",
+		            data : JSON.stringify({'id':15,'time':'2017-11-1','title':'修改测试','content':'修改测试数据'}),
+			        dataType : "text",
+					success:function(data){
+						console.log(data);
+					},
+					error:function(){
+					 console.log('error');
+				}
+				});
+			});
+			/*$.ajax({
+				type:'put',
+				url:'http://localhost:3000/update',
+				contentType: "application/json;charset=utf-8",
+	            data : JSON.stringify({'film_name':'lj','film_type':' 纪录片','film_id':100001}),
+		        dataType : "text",
+				success:function(data){
+					console.log(data);
+				},
+				error:function(){
+				 console.log('error');
+				}
+			});*/
+			/*$.ajax({
+				type:'delete',
+				url:'http://localhost:3000/delete',
+				contentType: "application/json;charset=utf-8",
+	            data : JSON.stringify({'film_id':100001}),
+		        dataType : "text",
+				success:function(data){
+					console.log(data);
+				},
+				error:function(){
+				 console.log('error');
+				}
+			});*/
+			/*$.ajax({
+				type:'post',
+				url:'http://localhost:3000/add',
+				contentType: "application/json;charset=utf-8",
+	            data : {'time':'2017-10-29','title':'测试1','content':'测试数据啦啦啦啦'},
+		        dataType: "json",
+				success:function(data){
+					console.log(data);
+				},
+				error:function(){
+				 console.log('error');
+				}
+			});*/
+		});
+	</script>
+</head>
+<body>
+	<h1>jwf</h1>
+	<button id="add">增</button>
+	<button id="delete">删</button>
+	<button id="update">更新</button>
+	<button id="search">查找</button>
+	<button id="login">登录</button>
+	<button id="loginout">登出</button>
+	<button id="zhuce">注册</button>
+</body>
+</html>
