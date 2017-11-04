@@ -7,11 +7,11 @@ var bodyParser = require('body-parser');
 var app =express();
 app.set('trust proxy', 1);
 var options={     
-  host     : 'localhost',       
+  host     : '123.206.212.138',       
   user     : 'root',              
-  password : 'jj292860',       
+  password : 'shirt123',       
   port: '3306',                   
-  database: 'jwf_pachong', 
+  database: 'jwflj', 
 };
 app.use(cookieParser('name'));
 app.use(session({
